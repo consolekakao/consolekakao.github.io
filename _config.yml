@@ -23,13 +23,13 @@ repository: ShawnTeoh/matjek
 paginate: 5
 
 # MatJek specific configurations
-github_profile: "https://github.com/ShawnTeoh"
-user: "John Doe"
-user_email: "john@doe.com"
+github_profile: "https://github.com/consolekakao"
+user: "consolekakao"
+user_email: "console@kakao.com"
 contact_url: "https://goo.gl/tVljbV"
 google_tracking_id: "UA-96359860-1"
 google_site_verification: "UA-96359860-1"
-disqus_shortname: "matjek"
+disqus_shortname: "conoslekakao"
 
 # Build settings
 markdown: kramdown
