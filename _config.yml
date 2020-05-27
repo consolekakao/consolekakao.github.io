@@ -20,7 +20,7 @@ baseurl: "/"
 url: "https://consolekakao.github.io"
 permalink: /:year/:month/:day/:title
 repository: ShawnTeoh/matjek
-paginate: 5
+paginate: 2
 
 # MatJek specific configurations
 github_profile: "https://github.com/consolekakao"

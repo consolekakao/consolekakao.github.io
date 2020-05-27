@@ -20,9 +20,9 @@ Clone or fork this repo and edit `_config.yml` as needed.
 Most of the configurations can be found in `_config.yml`. The configurations listed below are specific to MatJek. If you are not using `google_tracking_id` or `disqus_shortname`, just remove them completely.
 
 ```yaml
-github_profile: "github_profile_url"
-user: "your_name" # Appears at sidebar
-user_email: "your_email" # Appears at sidebar, remove whole variable if unwanted
+github_profile: "https://github.com/consolekakao"
+user: "consolekakao" # Appears at sidebar
+user_email: "console@kakao.com" # Appears at sidebar, remove whole variable if unwanted
 contact_url: "google_form_link"
 google_tracking_id: "google_analytics_ID"
 disqus_shortname: "shortname_given_by_Disqus"
@@ -39,8 +39,8 @@ comments: 1
 Add tags and categories to your posts in the front matter as well. Multiple tags/categories can be assigned but need to be separated by spaces.
 
 ```yaml
-categories: default default2
-tags: test test2
+categories: JS JAVA
+tags: abc def
 ```
 
 ## Contributing
