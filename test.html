@@ -3,22 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>test</title>
 </head>
 <body>
     <script>
-async function a(){
-    var request = require('request')
-    const axios = require("axios");
-    var url = 'http://naver.com/';
-    axios.get("https://www.yna.co.kr/sports/all");
 
-
-
+let x = new XMLHttpRequest();
+x.open("GET","https://consolekakao.github.io/")
+x.send();
+console.log(x.response);
+function test(){
+    if(x.readyState == '4'){
+    console.log('complete road');
+    document.write(x.responseText)
+    clearInterval(timer);
 }
-console.log("1");
-b();
-a();
+else{
+    console.log(x.readyState);
+}
+}
+let timer = setInterval(test,1000);
+
 
 
 
