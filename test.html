@@ -15,7 +15,8 @@ console.log('1번째시도' + x.response);
 function test(){
     if(x.readyState == '4'){
     console.log('complete road');
-    document.write(x.responseText)
+    console.log(x.response);
+    document.write(x.response);
     clearInterval(timer);
 }
 else{

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var x = new XMLHttpRequest();
+        x.open("GET","http://consolekakao.github.io");
+        x.send();
+        var timer = setInterval(test,1000);
+        function test(){
+            if (x.readyState == '4'){
+                console.log(x.responseText);
+                clearInterval(timer);
+                console.log("-------------------");
+                
+                var q = x.responseText.substring(x.responseText.indexOf("card-title"),x.responseText.lastIndexOf("</span>"));
+               
+                
+              
+                // a = body.substring(body.indexOf("<DIV class='news_box'"),body.lastIndexOf("현재 진행중인 챔피언 및 스킨 세일"));
+                console.log(q);
+                document.write(q);
+            }
+
+        }
+
+    </script>
+</body>
+</html>
