@@ -16,17 +16,23 @@
             .catch(err => console.log(err));
     
        */
-      let a,b,i,index;
+      let a,b,i,c,index;
       
       async function test(){
       a = await fetch("https://consolekakao.github.io")
       b = await a.text();
 
-        for(i=0;i<8;i++){
-       document.write(b.substring(b.indexOf('card-title'),b.indexOf('</span>')))
+        for(i=0;i<7;i++){
+          console.log(b.substring(b.indexOf('card-title'),b.indexOf('post-date')  ) );
+      // document.write(b.substring(b.indexOf('card-title'),b.indexOf('post-date')))
+       //console.log(b.indexOf('card-title'));
        b = b.substring(b.indexOf('card-title')+1)
-       console.log(b.indexOf('card-title'));
+       c = b.substring(b.indexOf('post-date'))
+       console.log(b.substring(b.indexOf('card-title'),b.indexOf('post-date')  ) );
         }
+
+        //var w = document.querySelectorAll('.card-title')
+        //console.log(w);
 
       }
       test();
