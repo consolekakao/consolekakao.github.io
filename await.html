@@ -22,10 +22,10 @@
       a = await fetch("https://consolekakao.github.io")
       b = await a.text();
 
-        for(i=0;i<7;i++){
-           
-       document.write(b.substring(b.indexOf('card-title',index+1),b.indexOf('post-date',index+1)))
-             
+        for(i=0;i<8;i++){
+       document.write(b.substring(b.indexOf('card-title'),b.indexOf('</span>')))
+       b = b.substring(b.indexOf('card-title')+1)
+       console.log(b.indexOf('card-title'));
         }
 
       }
