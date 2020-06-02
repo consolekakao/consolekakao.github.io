@@ -16,10 +16,20 @@
             .catch(err => console.log(err));
     
        */
+      let a,b,i,index;
+      
+      async function test(){
+      a = await fetch("https://consolekakao.github.io")
+      b = await a.text();
 
-       fetch("https://consolekakao.github.io")
-       .then( a => a.text())
-       .then(t => console.log(t))
+        for(i=0;i<7;i++){
+           
+       document.write(b.substring(b.indexOf('card-title',index+1),b.indexOf('post-date',index+1)))
+             
+        }
+
+      }
+      test();
     </script>
 
 
