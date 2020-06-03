@@ -8,14 +8,20 @@
 <body>
     <script>
 
-let x = new XMLHttpRequest();
+var x = new XMLHttpRequest();
 x.open("GET","https://consolekakao.github.io/");
 x.send();
+
 function test(){
+
     if(x.readyState == '4'){
     console.log('complete road');
-    console.log(x.responseText);
-    
+
+    let i;
+    var el = document.createElement('yoso')
+    el.innerHTML = x.responseText;
+     
+    for(i=0;i<el.querySelectorAll('.card-title').length;i++) document.writeln(el.querySelectorAll('.card-title')[i].innerText+'<br>');
     clearInterval(timer);
 }
 else{
@@ -27,7 +33,12 @@ let timer = setInterval(test,100);
 
 
 
+/*
+    console.log(x.responseText.substring(x.responseText.indexOf('card-title')+12,x.responseText.indexOf('</span>',x.responseText.indexOf('card-title'))));
 
+    x.responseText = x.responseText.substring(x.responseText.indexOf('card-title')+1);
+    */
+   
 
 
     </script>
