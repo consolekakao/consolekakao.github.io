@@ -7,24 +7,23 @@
 </head>
 <body>
     <script>
-let i = 2;
+
 let x = new XMLHttpRequest();
 x.open("GET","https://consolekakao.github.io/");
 x.send();
-console.log('1번째시도' + x.response);
 function test(){
     if(x.readyState == '4'){
     console.log('complete road');
-    console.log(x.response);
-    document.write(x.response);
+    console.log(x.responseText);
+    
     clearInterval(timer);
 }
 else{
-    console.log(i+'번째 시도' + x.readyState);
-    i++;
+    console.log('loading');
+    
 }
 }
-let timer = setInterval(test,10);
+let timer = setInterval(test,100);
 
 
 

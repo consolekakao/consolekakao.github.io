@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <script>
-       
+
         /*
             console.log('start');
             fetch("https://consolekakao.github.io")
@@ -16,21 +18,40 @@
             .catch(err => console.log(err));
     
        */
-      let a,b,i,c,index;
-      
-      async function test(){
-      a = await fetch("https://consolekakao.github.io")
-      b = await a.text();
 
+        var w;
+        var serverPath = 'https://consolekakao.github.io';
+
+        var loadHtml = function (path, callback) {
+            var xhr = new XMLHttpRequest();
+            xhr.open('GET', path, true);
+            xhr.onreadystatechange = function () {
+                if (this.readyState !== 4) return;
+                if (this.status !== 200) return;
+                callback(this.responseText);
+                console.log(xhr.responseURL);
+                console.log();
+            };
+            xhr.send();
+        };
+        
+        var displayHtml = function () {
+            loadHtml(serverPath , function (html) {
+               document.querySelector('.card-title').innerText = html ;
+               document.write('--------------------------------------------');
+             console.log(document.getElementsByClassName('.card-title'));
+            });
+            return false;
+        };
         
 
-        var w = document.b.
-        console.log(w);
-
-      }
-      test();
     </script>
+        <button onclick="displayHtml('');">Load html</button>
+            <div class="card-title"></div>
+
+    
 
 
 </body>
+
 </html>
