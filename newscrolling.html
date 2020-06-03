@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let x = new XMLHttpRequest();
+        x.open("GET","https://consolekakao.github.io");
+        x.send();
+        function test()
+        {
+        if(x.readyState == '4'){
+           var el = document.createElement('abc');
+           el.innerHTML = x.responseText;
+           document.write(el.querySelectorAll('.card-title')[0].innerText);
+          clearInterval(timer);
+        }
+    }
+
+    test();
+
+    let timer = setInterval(test,1000);
+    
+    </script>
+    
+</body>
+</html>

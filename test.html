@@ -21,7 +21,9 @@ function test(){
     var el = document.createElement('yoso')
     el.innerHTML = x.responseText;
      
-    for(i=0;i<el.querySelectorAll('.card-title').length;i++) document.writeln(el.querySelectorAll('.card-title')[i].innerText+'<br>');
+    for(i=0;i<el.querySelectorAll('.card-title').length;i++) {
+    document.writeln(el.querySelectorAll('.card-title')[i].innerText+'<br>');
+    }
     clearInterval(timer);
 }
 else{
@@ -30,15 +32,6 @@ else{
 }
 }
 let timer = setInterval(test,100);
-
-
-
-/*
-    console.log(x.responseText.substring(x.responseText.indexOf('card-title')+12,x.responseText.indexOf('</span>',x.responseText.indexOf('card-title'))));
-
-    x.responseText = x.responseText.substring(x.responseText.indexOf('card-title')+1);
-    */
-   
 
 
     </script>
