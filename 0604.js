@@ -1,8 +1,5 @@
 var cheerio = require('cheerio');
 var request = require('request');
-var jsdom = require('jsdom');
-const { JSDOM } = jsdom;
-
 var url = "https://consolekakao.github.io/"
 
 request(url, function(error, response, html){
@@ -10,17 +7,17 @@ request(url, function(error, response, html){
 
     var $ = cheerio.load(html);
     const $title = $('.card-title');
-    console.log($title.text());
-    let arr = new Array();
-    arr = $title.text().split();
-    console.log(arr);
-    /*
+    let a = {};
+    let list = new Array();
+    a = $title.text().split('.');
+    console.log(Object.keys(a).length);
     let i;
-    for(i=0;i<6;i++){
-    let ob = new Object();
-    ob.number = i;
-    ob.title = arr
-    
+    for(i=0;i<Object.keys(a).length-1;i++){
+    let jlist = new Object();
+    jlist.number = i;
+    jlist.value = a[i];
+    list.push(jlist);
     }
-*/
+    console.log(list);
+   
 });
