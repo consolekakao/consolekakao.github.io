@@ -18,7 +18,7 @@ request(url, function(error, response, html){
     jlist.value = a[i];
     list.push(jlist);
     }
-    ///aggsdag
+
 
     console.log(list); //list출력
    
