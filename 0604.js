@@ -18,8 +18,8 @@ request(url, function(error, response, html){
     jlist.value = a[i];
     list.push(jlist);
     }
-    ///aggsdagdas
-    
+    ///aggsdag
+
     console.log(list); //list출력
    
 });
