@@ -1,44 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>test</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
+      var x = new XMLHttpRequest();
+      x.open("GET", "https://consolekakao.github.io/");
+      x.send();
 
-var x = new XMLHttpRequest();
-x.open("GET","https://consolekakao.github.io/");
-x.send();
+      function test() {
+        if (x.readyState == "4") {
+          console.log("complete road");
 
-function test(){
+          let i;
+          var el = document.createElement("yoso");
+          el.innerHTML = x.responseText;
+          clearInterval(timer);
 
-    if(x.readyState == '4'){
-    console.log('complete road');
-
-    let i;
-    var el = document.createElement('yoso')
-    el.innerHTML = x.responseText;
-    clearInterval(timer);
-
-    let jlist = new Array();
-    for(i=0;i<el.querySelectorAll('.card-title').length;i++) {
-        var jdata = new Object();
-        jdata.number = i;
-        jdata.value = el.querySelectorAll('.card-title')[i].innerText;
-        jlist.push(jdata);
-    }
-        var view = JSON.stringify(jlist);
-        document.write(view);
-
-}
-else{
-    console.log('loading');
-    
-}
-}
-let timer = setInterval(test,100);
+          let jlist = new Array();
+          for (i = 0; i < el.querySelectorAll(".card-title").length; i++) {
+            var jdata = new Object();
+            jdata.number = i;
+            jdata.value = el.querySelectorAll(".card-title")[i].innerText;
+            jlist.push(jdata);
+          }
+          var view = JSON.stringify(jlist);
+          document.write(view);
+        } else {
+          console.log("loading...");
+        }
+      }
+      let timer = setInterval(test, 100);
     </script>
-</body>
+  </body>
 </html>
