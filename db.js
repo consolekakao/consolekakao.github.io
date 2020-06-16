@@ -17,7 +17,7 @@ module.exports = function () {
         if (err) {
           console.error("err");
         } else {
-          console.info("err2fdsf");
+          console.info("err");
         }
       });
     },
