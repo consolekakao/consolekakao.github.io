@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test</title>
+  </head>
+  <body>
+    <script>
+      var x = new XMLHttpRequest();
+      x.open("GET", "https://consolekakao.github.io/");
+      x.send();
+
+      function test() {
+        if (x.readyState == "4") {
+          console.log("complete road...");
+
+          let i;
+          var el = document.createElement("yoso");
+          el.innerHTML = x.responseText;
+
+          for (i = 0; i < el.querySelectorAll(".card-title").length; i++) {
+            document.writeln(
+              el.querySelectorAll(".card-title")[i].innerText + "<br>"
+            );
+            document.write(
+              "------------------------------------------------------------------<br>"
+            );
+          }
+          clearInterval(timer);
+        } else {
+          console.log("loading");
+        }
+      }
+      let timer = setInterval(test, 100);
+    </script>
+  </body>
+</html>
