@@ -11,6 +11,7 @@
         var x = new XMLHttpRequest();
         x.open("GET","http://consolekakao.github.io");
         x.send();
+        var i = 0;
         var timer = setInterval(test,1000);
         function test(){
             if (x.readyState == '4'){
@@ -20,11 +21,16 @@
                 
                 var q = x.responseText.substring(x.responseText.indexOf("card-title"),x.responseText.lastIndexOf("</span>"));
                
-                
+                for(i;i<7;i++)
+                {
+                       document.write(q.substring(q.indexOf("card-title",i),q.))
+
+                }
               
                 // a = body.substring(body.indexOf("<DIV class='news_box'"),body.lastIndexOf("현재 진행중인 챔피언 및 스킨 세일"));
                 console.log(q);
                 document.write(q);
+                
             }
 
         }
