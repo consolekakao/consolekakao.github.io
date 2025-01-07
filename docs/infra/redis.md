@@ -66,6 +66,7 @@ Redis는 Remote Dictionary Server의 약자로, 오픈 소스 기반의 비관�
 
 DB에서 값을 가져오지 않고 메모리에 적재해 둔 데이터를 바로 가져오는 건 **시간이 수십 수백 배 어쩌면 그 이상 빠르기 때문이다.**
 <br/>
+
 **간편한 사용방법**
 <br/>
 아래 예제코드에서 서술하겠지만 코드가 굉장히 직관적입니다. 프론트 개발자라면 LocalStorage를 조작해 본 경험이 있을 것이다.
@@ -108,7 +109,9 @@ Redis는 다양한 데이터타입을 지원합니다. String, Set, List, Hash �
 
 <br/><br/><br/>
 
-**사용해 보기**
+### **사용해 보기**
+
+<br/><br/><br/>
 
 **설치**
 
@@ -148,7 +151,7 @@ Redis 서버를 데몬으로 백그라운드실행 시키겠다는 옵션을 추
 
 <br/><br/><br/>
 
-#### **실습**
+### **실습**
 
 <br/>
 이제 node express를 활용해 Redis를 통한 캐싱을 구현하는 과정을 살펴보겠다.
@@ -215,9 +218,13 @@ express가 3030 포트의 기본 경로로 들어오는 GET 요청에 대해서 
 
 현재 i값(50억)을 레디스의 resultData에 저장한다.
 
+<br/>
+
 바로 아래 **expire**("resultData",20); 코드는 **resultData** 라는 키의 값은 20초만 유효하다고 선언하는 코드이다.
 
 결과적으로 heavyProcess라는 함수는 최소 20초에 한 번만 실행해도 되도록 완성되었다.
+
+<br/>
 
 20초가 지나고 데이터가 만료되기 전까지나 다시 동일한 요청이 올 때까진
 
@@ -228,9 +235,12 @@ express가 3030 포트의 기본 경로로 들어오는 GET 요청에 대해서 
 ![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FJsOwE%2FbtsqKivbQo3%2FvDxCKzby4Md4wUC7Cwh8nK%2Fimg.png)
 ![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fdf5Ccb%2FbtsqO9wRwo7%2FNtVfCwLxBbqNcGWIZeeWMk%2Fimg.png)
 ![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbVsTYS%2FbtsqLRDGFxM%2FwX3kk6Tq1RsEFxLAJee8nk%2Fimg.png)
+
+<br/>
 http://localhost:6379 최초 접속 시 응답이 오는데까지 15.35초가 걸리는데 반해
 
 두 번째 접속시 0.008초가 소요되었고 서버에도 heavyProcess 함수가 **한 번만 실행** 된 걸 확인할 수 있다.
+<br/>
 
 예시를 극단적으로 들었긴하지만 해외에서 받아오는 api나 요청 제한이 있는 api등
 
