@@ -1,5 +1,5 @@
 ---
-title: [AWS] Lambda를 통한 API 서버 만들기
+title: \[AWS]\ Lambda를 통한 API 서버 만들기
 layout: default
 parent: Infra
 nav_order: 3
