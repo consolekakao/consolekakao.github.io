@@ -1,5 +1,5 @@
 ---
-title: \[AWS]\ Lambda를 통한 API 서버 만들기
+title: AWS Lambda를 통한 API 서버 만들기
 layout: default
 parent: Infra
 nav_order: 3
@@ -23,7 +23,7 @@ nav_order: 3
 
 사실 serverless는 니꼴라스같은 유튜버가 혁신이네 뭐네 하면서 강의하는 것만 봤지 실제로 써볼 생각은 안 했다.
 
-서버가 있는데 왜 안 써..? 굳이..?
+서버가 있는데 왜 써..? 굳이..?
 
 근데 서버 인스턴스 하나 더 구축하는 게 더 귀찮을 거라 생각했고 람다를 통해서 관리포인트를 줄이기로 했다.
 
