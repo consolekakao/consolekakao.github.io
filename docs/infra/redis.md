@@ -123,7 +123,7 @@ brew install redis
 
 먼저 redis를 brew를 통해 설치.
 
-![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb3b1r9%2FbtsqRRbkL59%2FSP9eH8M6HcAah51ZPXnAKk%2Fimg.png){: width="200" height="200"}
+![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb3b1r9%2FbtsqRRbkL59%2FSP9eH8M6HcAah51ZPXnAKk%2Fimg.png){: width="400" height="400"}
 
 ```
 redis-server
