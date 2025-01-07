@@ -1,10 +1,6 @@
 ---
-title: Retrospective
-description: This is a Retrospective CATEGORY
+title: 회고
+description: 반성하며 발전하기
 layout: default
 has_children: true
 ---
-
-# This is a Retrospective CATEGORY
-
-This is a Retrospective CATEGORY
