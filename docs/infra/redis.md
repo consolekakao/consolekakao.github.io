@@ -5,7 +5,7 @@ parent: Infra
 nav_order: 1
 ---
 
-![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbEnXba%2FbtsqJBH1Ias%2FYR87VPiGnS1dpY6cuvIkIk%2Fimg.png)
+![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbEnXba%2FbtsqJBH1Ias%2FYR87VPiGnS1dpY6cuvIkIk%2Fimg.png){: width="200" height="200"}
 
 <br/><br/>
 
@@ -123,7 +123,7 @@ brew install redis
 
 먼저 redis를 brew를 통해 설치.
 
-![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb3b1r9%2FbtsqRRbkL59%2FSP9eH8M6HcAah51ZPXnAKk%2Fimg.png)
+![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb3b1r9%2FbtsqRRbkL59%2FSP9eH8M6HcAah51ZPXnAKk%2Fimg.png){: width="200" height="200"}
 
 ```
 redis-server
@@ -141,13 +141,15 @@ redis-server --daemonize yes
 
 Redis 서버를 데몬으로 백그라운드실행 시키겠다는 옵션을 추가로 주었다.
 <br/>
-![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FsIdmy%2FbtsqJD7o30a%2Fptmpxw9Pi9NJm1PVgIxeK0%2Fimg.png)
+
+![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FsIdmy%2FbtsqJD7o30a%2Fptmpxw9Pi9NJm1PVgIxeK0%2Fimg.png){: width="200" height="200"}
+
 <br/>
 백그라운드로 돌아가고 있는 Redis에는 redis-cli 커맨드를 통해 접속해서 명령어를 날릴 수 있다.
 
 <br/><br/><br/>
 
-![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcAabKV%2FbtsqQ8LikOF%2FG9lkgm9aEDvRCauIvf6u4K%2Fimg.png)
+![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcAabKV%2FbtsqQ8LikOF%2FG9lkgm9aEDvRCauIvf6u4K%2Fimg.png){: width="200" height="200"}
 
 <br/><br/><br/>
 

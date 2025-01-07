@@ -19,7 +19,7 @@ nav_order: 3
 
 프론트에서 리사이징 시켜서 업로드해 버릴까 생각도 했지만 좀 더 찾아보기로 했다.
 
-![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbrRk0W%2FbtrXCI8Vsi3%2FXF2tFQyRmudRpkkhngTac1%2Fimg.png)
+![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbrRk0W%2FbtrXCI8Vsi3%2FXF2tFQyRmudRpkkhngTac1%2Fimg.png){: width="160" height="300"}
 
 사실 serverless는 니꼴라스같은 유튜버가 혁신이네 뭐네 하면서 강의하는 것만 봤지 실제로 써볼 생각은 안 했다.
 
@@ -169,7 +169,7 @@ fileb://sms.zip --handler index.handler --runtime nodejs18.x
 
 코드에 작성한 대로 값들이 잘 반환되었고 아래와 같이 문자도 잘 수신된 걸 확인했다.
 
-![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FTMR8U%2FbtrXzZjQxz3%2FZVKZgBPmf9o9K6dKUarQO1%2Fimg.png)
+![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FTMR8U%2FbtrXzZjQxz3%2FZVKZgBPmf9o9K6dKUarQO1%2Fimg.png){: width="100" height="200"}
 
 <br/><br/><br/><br/>
 
@@ -181,10 +181,10 @@ fileb://sms.zip --handler index.handler --runtime nodejs18.x
 
 아래 과정을 그대로 따라 하자.
 
-![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcxqSWb%2FbtrXCh4NLLp%2F3Ba9rljPXmKkoggjMJv3r0%2Fimg.png)
-![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcO6kk0%2FbtrXD7mQD3M%2FvqXSDFl89quNA8lprGalz0%2Fimg.png)
-![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F2NB4R%2FbtrXCjauWQ2%2FYmGpgaoy1LBjNLZt8pAFuk%2Fimg.png)
-![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbQ6Ju4%2FbtrXBxG5eBr%2FK2N0kC48a5EhwC8vFYFLL1%2Fimg.png)
+![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcxqSWb%2FbtrXCh4NLLp%2F3Ba9rljPXmKkoggjMJv3r0%2Fimg.png){: width="200" height="400"}
+![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcO6kk0%2FbtrXD7mQD3M%2FvqXSDFl89quNA8lprGalz0%2Fimg.png){: width="200" height="400"}
+![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2F2NB4R%2FbtrXCjauWQ2%2FYmGpgaoy1LBjNLZt8pAFuk%2Fimg.png){: width="200" height="400"}
+![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbQ6Ju4%2FbtrXBxG5eBr%2FK2N0kC48a5EhwC8vFYFLL1%2Fimg.png){: width="200" height="400"}
 
 이제 위에 함수개요에 API Gateway가 람다와 연동된 게 다이어그램으로 표기되고 아래에 Api endpoint 주소가 나온다.
 
