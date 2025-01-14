@@ -5,11 +5,9 @@ parent: Infra
 nav_order: 4
 ---
 
-## 시작
+다량의 썸네일 이미지를 효율적으로 생성하고 서버 부하를 줄이기 위해
 
-<br/><br/>
-
-다량의 썸네일 이미지생성을 처리하기 위한 서버를 구현해야 한다.
+AWS Lambda를 사용해 이미지를 리사이징하고, S3에 저장하는 구조를 구현했다.
 
 백엔드가 NodeJs로 굴러가서 리사이징 같은 CPU 소모가 큰 작업 때문에 이미지 업로드는
 
@@ -117,8 +115,7 @@ exports.handler = async (event, context, callback) => {
 ```
 
 <br/><br/>
-
-권한 설정이나 람다 업로드에 관한 내용은 [[AWS] lambda로 API서버 만들기](https://bdev.tistory.com/26) 에서 확인하면 된다.
+S3 버킷의 IAM 정책 설정 방법과 Lamda 배포 과정은 [[AWS] lambda로 API서버 만들기](https://bdev.tistory.com/26) 에서 확인하면 된다.
 
 <br/><br/>
 
@@ -173,3 +170,7 @@ exports.handler = async (event, context, callback) => {
 이제 프론트나 외부서비스에서 S3로 이미지를 업로드 하더라도 알아서 다양한 사이즈의 썸네일 이미지를
 
 생성해 디바이스에 적절한 이미지를 제공할 수 있다.
+
+<br/><br/>
+
+AWS Lambda를 사용해 이미지 리사이징을 자동화하면 서버 부하를 줄이고 비용을 절감할 수 있습니다. 다만 대량의 이미지 업로드 시 Lambda의 동시 실행 제한에 주의가 필요하다.
