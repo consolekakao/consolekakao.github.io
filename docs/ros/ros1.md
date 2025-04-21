@@ -1,5 +1,5 @@
 ---
-title: 시작하기 - ROS란 무엇인가
+title: 시작하기 - Hello ROS
 # description: This is a ROS Contents
 layout: default
 parent: Smart Factory
@@ -127,8 +127,29 @@ js로도 라이브러리가 있긴하지만 ROS2가 설치되어있어야하고 
 
 <br/><br/>
 
-맵을 하나씩 만들고 해야하는데 오브젝트 두기 귀찮으니 이것도 프론트에서 그리드를 그려서 장애물로 만들게 진행하자.
+맵을 하나씩 만들고 해야하는데 오브젝트 두기 귀찮으니 이것도 프론트에서 마우스를 이용해 그리드를 그려서 장애물로 만들게 진행하자.
 
 생각한 로직은 아래와 같다.
 
 ![turtlebot tutorial](../assets/ros/ros1-6.png)
+
+![img](../assets/ros/ros1-7.png)
+
+이렇게 GUI 환경에서 사용자가 맵을 생성할 수 있게 되었다.
+
+이제 BFS 탐색을 통해 최단 경로 계획을 세워보자.
+
+![img](../assets/ros/ros1-9.png)
+
+![img](../assets/ros/ros1-10.png)
+
+BFS 탐색을 통해 로봇의 크기를 고려해 지나갈 수 있는 곳을 기준으로 경로 플랜을 작성하도록 기능을 추가해보았다.
+
+
+
+
+![img](../assets/ros/ros1-12.png)
+
+![img](../assets/ros/ros1-11.png)
+
+로봇을 3*3 크기로 잡고 테스트결과 2칸의 공간은 경로계획에 넣지 않았다.
