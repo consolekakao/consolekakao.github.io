@@ -5,7 +5,7 @@ parent: Infra
 nav_order: 1
 ---
 
-![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbEnXba%2FbtsqJBH1Ias%2FYR87VPiGnS1dpY6cuvIkIk%2Fimg.png){: width="200" height="200"}
+![Redis 로고](/assets/images/infra/redis/redis-logo.webp){: width="200" height="200"}
 
 <br/><br/>
 
