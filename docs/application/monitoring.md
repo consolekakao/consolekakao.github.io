@@ -1,5 +1,5 @@
 ---
-title: [RN] 모니터링 앱 만들기
+title: RN으로 모니터링 앱 만들기
 layout: default
 parent: Application
 nav_order: 1
