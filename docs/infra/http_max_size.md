@@ -5,9 +5,9 @@ parent: Infra
 nav_order: 2
 ---
 
-![](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fb3UUv1%2FbtrVzYAcxK1%2FHAl5bBvparDlQutCm8KaF1%2Fimg.png){: width="400" height="400"}
+![](../assets/ros/ros1-1.png){: width="400" height="400"}
 
-API를 만드는 도중 Axios를 통해 POST 하는 과정에서 왜 데이터를 헤더에 다 안 보내고 굳이 Body에 싣어서 날릴까 의문이 들었다.
+API를 만드는 도중 Axios를 통해 POST요청을 보내는 과정에서 왜 데이터를 헤더에 다 안 보내고 굳이 Body에 싣어서 날릴까 의문이 들었다.
 
 그냥 헤더에 다 때려박으면 안될까 싶어서 찾아봤다.
 
