@@ -73,3 +73,12 @@ nav_order: 1
 ![img](../assets/ros/ros5-5.png)
 
 
+
+<br/><br/>
+<br/><br/>
+
+또 라이다 자체의 아이피를 까먹어서 와이어샤크를 통해 노가다로 찾은건 덤.
+
+![img](../assets/ros/ros5-6.png)
+
+
