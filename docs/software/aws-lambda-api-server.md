@@ -2,7 +2,7 @@
 title: AWS Lambda로 API 서버 만들기
 layout: default
 parent: 소프트웨어 개발
-nav_order: 2
+nav_order: 4
 summary: IAM 권한부터 API Gateway 연동까지
 description: 서버 인스턴스 하나 더 세우기 귀찮아서 람다로 도망친 이야기. IAM 권한부터 API Gateway 연동까지.
 ---

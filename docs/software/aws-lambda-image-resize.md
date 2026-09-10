@@ -2,7 +2,7 @@
 title: AWS Lambda로 이미지 리사이징 후 S3에 저장하기
 layout: default
 parent: 소프트웨어 개발
-nav_order: 3
+nav_order: 5
 summary: 2.0MB 원본을 310KB로, 서버는 경로에서 제외
 description: 썸네일 생성을 백엔드에서 떼어내 람다로 넘긴 과정. 2.0MB 원본이 310KB가 되기까지.
 ---
