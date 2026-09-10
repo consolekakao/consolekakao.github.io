@@ -7,11 +7,11 @@ description: 소프트웨어와 하드웨어 사이 어딘가에서 만든 것�
 
 <div class="home-hero" markdown="0">
   <p class="home-hero__eyebrow">consolekakao</p>
-  <h1 class="home-hero__title">만들다 막힌 지점을<br>기록으로 남긴다</h1>
+  <h1 class="home-hero__title">만들다 막힌 자리에<br>남겨두는 기록</h1>
   <p class="home-hero__lede">
-    웹 개발로 시작해 지금은 로봇과 센서 쪽을 만지고 있다.
-    잘 된 결과보다 어디서 어떻게 막혔는지를 주로 적는다.
-    나중의 내가 같은 데서 두 번 막히지 않도록.
+    웹 개발로 시작해 지금은 로봇이랑 센서 쪽을 만지고 있다.
+    잘 된 결과보다는 어디서 어떻게 막혔는지를 주로 적어둔다.
+    나중의 내가 같은 자리에서 두 번 헤매지 않았으면 해서.
   </p>
 </div>
 
@@ -19,30 +19,30 @@ description: 소프트웨어와 하드웨어 사이 어딘가에서 만든 것�
   <a class="card" href="{{ '/docs/software/software.html' | relative_url }}">
     <span class="card__index">01</span>
     <span class="card__title">소프트웨어 개발</span>
-    <span class="card__desc">서버, 앱, 프론트엔드, 클라우드 인프라. 돌아가게 만든 뒤에 비용과 부하를 줄인 이야기.</span>
+    <span class="card__desc">서버와 앱, 그리고 그 아래를 받치는 인프라. 일단 돌아가게 만든 다음, 비용과 부하를 줄여간 이야기들.</span>
     <span class="card__tags">Node.js · React Native · AWS Lambda · S3</span>
   </a>
   <a class="card" href="{{ '/docs/hardware/hardware.html' | relative_url }}">
     <span class="card__index">02</span>
     <span class="card__title">하드웨어 개발</span>
-    <span class="card__desc">ROS2 기반 자율주행 로봇, 라이다와 카메라 센서. 에러 로그조차 안 남는 세계.</span>
+    <span class="card__desc">ROS2 자율주행 로봇과 라이다, 카메라 센서. 틀려도 에러 로그 하나 안 남는 동네다.</span>
     <span class="card__tags">ROS2 · Lidar · Gazebo · OpenCV</span>
   </a>
   <a class="card" href="{{ '/docs/cs/cs.html' | relative_url }}">
     <span class="card__index">03</span>
     <span class="card__title">CS 지식</span>
-    <span class="card__desc">작업하다 말고 "이건 왜 이렇게 되어 있지?" 싶어 옆길로 샌 기록.</span>
+    <span class="card__desc">작업하다 말고 "이건 왜 이렇게 되어 있지?" 싶어 옆길로 새버린 기록.</span>
     <span class="card__tags">HTTP · Redis · Network</span>
   </a>
   <a class="card" href="{{ '/docs/retrospective/retrospective.html' | relative_url }}">
     <span class="card__index">04</span>
     <span class="card__title">회고</span>
-    <span class="card__desc">1년에 한 번, 뭘 했고 뭘 못 했는지. 매년 같은 다짐을 반복하는 중.</span>
+    <span class="card__desc">1년에 한 번, 뭘 했고 뭘 못 했는지. 매년 비슷한 다짐을 반복하는 중이다.</span>
     <span class="card__tags">2022 · 2024 · 2025</span>
   </a>
 </div>
 
-## 최근에 쓴 것
+## 최신 글
 
 <ul class="recent-list" markdown="0">
   <li>
@@ -69,4 +69,4 @@ description: 소프트웨어와 하드웨어 사이 어딘가에서 만든 것�
 
 ---
 
-찾는 글이 있으면 왼쪽 사이드바의 검색을 쓰면 된다. <kbd>K</kbd> 를 누르면 바로 포커스된다.
+찾는 글이 있다면 왼쪽 사이드바의 검색을 써보자. <kbd>K</kbd> 를 누르면 바로 포커스된다.
