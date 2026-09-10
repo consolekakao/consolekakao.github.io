@@ -11,8 +11,8 @@ description: 서버 인스턴스 하나 더 세우기 귀찮아서 람다로 도
 {: .no_toc }
 
 작업 중 다중 이미지 업로드를 구현할 일이 생겼다.
-최악의 경우 한 번에 200MB가 들어올 수도 있는 상황인데, 싱글스레드인 Node가
-버텨줄지 자신이 없었다. 서버를 하나 더 세우기는 귀찮아서 람다로 도망쳤다.
+최악의 경우 한 번에 200MB가 들어올 수도 있는데 싱글스레드인 Node가 버텨줄지
+자신이 없었고, 그렇다고 서버를 하나 더 세우기는 귀찮아서 결국 람다로 도망쳤다.
 
 <details open markdown="block">
   <summary>목차</summary>
@@ -34,9 +34,9 @@ description: 서버 인스턴스 하나 더 세우기 귀찮아서 람다로 도
 | 최악의 경우 총 용량 | 약 200 MB |
 | 백엔드 런타임 | Node.js (싱글스레드) |
 
-백엔드에서 리사이징을 진행하더라도 일단 업로드받아서 처리하는 데 싱글스레드인 Node가
-버텨줄지 의문이었고, 클러스터를 믿고 의존하기엔 애매했다.
-프론트에서 리사이징시켜서 업로드해버릴까 생각도 했지만 좀 더 찾아보기로 했다.
+백엔드에서 리사이징을 하더라도 일단 업로드부터 받아서 처리해야 하는데,
+싱글스레드인 Node가 버텨줄지 의문이었다. 클러스터를 믿고 의존하기엔 애매했고,
+프론트에서 리사이징시켜서 올려버릴까 생각도 했지만 일단 좀 더 찾아보기로 했다.
 
 ![Serverless 개념 이미지](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbrRk0W%2FbtrXCI8Vsi3%2FXF2tFQyRmudRpkkhngTac1%2Fimg.png){: width="400" }
 *서버가 있는데 왜 써..? 굳이..? 라고 생각했었다*
@@ -44,10 +44,10 @@ description: 서버 인스턴스 하나 더 세우기 귀찮아서 람다로 도
 사실 serverless는 니꼴라스 같은 유튜버가 혁신이네 뭐네 하면서 강의하는 것만 봤지
 실제로 써볼 생각은 안 했다. 서버가 있는데 왜 써..? 굳이..?
 
-근데 서버 인스턴스 하나 더 구축하는 게 더 귀찮을 거라 생각했고,
-람다를 통해서 **관리 포인트를 줄이기로** 했다.
+그런데 막상 따져보니 서버 인스턴스 하나 더 구축하는 게 더 귀찮을 것 같았다.
+그래서 람다로 **관리 포인트를 줄이는** 쪽을 택했다.
 
-최종 목적은 S3 이미지 업로드지만, 처음 구현해보는 거라 간단한 예제로 시도해보고자
+최종 목적은 S3 이미지 업로드지만, 처음 구현해보는 거라 간단한 예제부터 해보려고
 예전에 만들어두었던 SMS 발송 코드를 가져왔다.
 
 ## 기본 세팅
@@ -72,19 +72,14 @@ brew install awscli
 여기 입력한 값은 `~/.aws/credentials` 에 저장되니 참고하자.
 사실 `aws configure` 다시 쳐도 수정 가능하다.
 
-## 문제 1. 권한이 없어서 아무것도 안 된다
+## 권한 등록
 
-{: .problem }
-> **증상** AccessKey로 사용자를 등록했는데 람다 함수 생성이 거부된다.
-> 키가 있다고 다 되는 게 아니었다.
+AccessKey로 사용자를 등록해주었으니, 이제 이 **사용자가 S3와 람다에 접근할 수 있게**
+권한을 가져올 차례다. 키가 있다고 다 되는 게 아니라, "무엇을 할 수 있는지"는
+정책(Policy)으로 따로 붙여줘야 한다.
 
-AccessKey는 "누구인지"만 증명한다. "무엇을 할 수 있는지"는 정책(Policy)이 따로 있다.
-사용자와 역할(Role) 양쪽에 권한을 붙여줘야 한다.
-
-{: .solution }
-> **해결** 보안자격증명 → 액세스 관리 → 사용자에서 해당 AccessKey를 선택하고,
-> 우측 권한 추가 → 정책 추가로 S3와 Lambda 정책을 검색해 붙였다.
-> 그리고 **역할(Role)에도 똑같이** 부여했다.
+보안자격증명 → 액세스 관리 → 사용자에 들어가 지정된 AccessKey를 선택한 뒤,
+우측 권한 추가에서 정책 추가를 눌러 아래 두 정책을 검색해서 추가해준다.
 
 ![IAM 사용자 권한 추가 화면](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcS6o5h%2FbtrXChRg2oL%2FICCDbKWofIiwz3YOkbs6L1%2Fimg.png)
 *사용자에 정책 두 개를 붙인다*
@@ -93,7 +88,7 @@ AccessKey는 "누구인지"만 증명한다. "무엇을 할 수 있는지"는 �
 목적은 S3 업로드이기에 함께 권한을 요청했다.
 
 ![역할에 정책을 부여하는 과정](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FR2CL9%2FbtrXDAimGy3%2FM6pB7IleqvvBaKxE47RAA1%2Fimg.png)
-*역할에도 동일하게 붙여준다. 여기를 빼먹으면 함수가 실행 시점에 죽는다*
+*이후 역할(Role)에서도 권한을 똑같이 부여해주자*
 
 ![역할 생성 단계 1](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FSxiGt%2FbtrXBlNxUNf%2F0MylTko62jeT8zYzHCpXT0%2Fimg.png)
 
@@ -136,11 +131,11 @@ exports.handler = function (event, context, callback) {
 };
 ```
 
-`yarn add coolsms-node-sdk` 로 패키지를 설치하고 위와 같이 작성했다.
+대충 이렇게 넣어줬다. `yarn add coolsms-node-sdk` 로 패키지를 설치하고 작성했다.
 
 {: .note }
-> 상세한 의미는 다른 블로그를 참고하고, 우선 **`exports.handler`는 꼭 지켜주자.**
-> 추후 람다에게 진입점으로 알려줘야 한다.
+> 상세한 의미는 다른 블로그를 참고하면 되고, 우선 **`exports.handler`는 꼭 지켜주자.**
+> 추후 람다에게 진입점으로 알려줘야 하는 이름이다.
 
 이제 코드를 작성하는 경로에서 아래 명령어로 `node_modules` 폴더와 함께 싸그리
 압축시켜주자.
@@ -185,7 +180,7 @@ aws lambda create-function \
 
 ## 테스트
 
-아래와 같이 잘 등록되어 나오는 걸 확인했다. 들어가서 테스트해보자.
+아래와 같이 잘 등록되어 나오는 걸 확인했다. 그럼 들어가서 테스트해보자.
 
 ![람다 콘솔의 함수 목록](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbFjRMF%2FbtrXBYEiU6O%2FXFnz8ac1xFxYJYchaI16M1%2Fimg.png)
 
@@ -199,8 +194,8 @@ aws lambda create-function \
 
 ## API Gateway 연동
 
-람다에 함수는 잘 올렸으니, 이제 이 함수를 호출할 루트를 만들어야 한다.
-AWS에서 제공하는 API Gateway 서비스를 이용한다.
+함수는 잘 올렸으니 이제 이걸 호출할 루트를 만들 차례다.
+여기서는 AWS에서 제공하는 API Gateway 서비스를 이용했다.
 
 ![API Gateway 트리거 추가 1](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcxqSWb%2FbtrXCh4NLLp%2F3Ba9rljPXmKkoggjMJv3r0%2Fimg.png){: width="260" }
 
@@ -211,7 +206,7 @@ AWS에서 제공하는 API Gateway 서비스를 이용한다.
 ![API Gateway 트리거 추가 4](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbQ6Ju4%2FbtrXBxG5eBr%2FK2N0kC48a5EhwC8vFYFLL1%2Fimg.png){: width="260" }
 *순서대로 따라 하면 된다*
 
-이제 함수 개요에 API Gateway가 람다와 연동된 게 다이어그램으로 표기되고,
+그러면 함수 개요에 API Gateway가 람다와 연동된 게 다이어그램으로 표기되고,
 아래에 API endpoint 주소가 나온다. 우리가 함수를 호출할 최종 URL이다.
 
 ![연동 완료된 함수 개요와 엔드포인트](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbjMCZz%2FbtrXFu9Ws1b%2FicPCKI2EFK8PobHNpDewCK%2Fimg.png)
@@ -222,14 +217,13 @@ AWS에서 제공하는 API Gateway 서비스를 이용한다.
 ## 마치며
 
 "서버가 있는데 왜 써"라고 생각했던 게 무색하게, 결국 관리 포인트를 줄이려고
-람다를 쓰게 됐다. 인스턴스를 하나 더 띄우면 그 인스턴스의 OS 업데이트, 모니터링,
-비용까지 전부 내 몫이 되는데 람다는 그게 없다.
+람다를 쓰게 됐다. 인스턴스를 하나 더 띄우면 그 인스턴스의 OS 업데이트와 모니터링,
+비용까지 전부 내 몫이 되는데 람다는 그게 없으니까.
 
-대신 처음 세팅이 은근히 까다로웠다. 코드 자체는 20줄인데 IAM 사용자·역할·정책의
-관계를 이해하는 데 시간을 제일 많이 썼다. 권한을 사용자에만 주고 역할에 안 줘서
-헤맨 게 특히 그랬다.
+대신 처음 세팅은 은근히 까다로웠다. 정작 코드는 20줄 남짓인데,
+IAM 사용자와 역할과 정책이 서로 어떻게 엮이는지 감을 잡는 데 시간을 제일 많이 썼다.
 
-이제 목적이었던 S3 이미지 리사이징으로 넘어갈 차례다.
+아무튼 이제 원래 목적이었던 S3 이미지 리사이징으로 넘어갈 차례다.
 
 다음엔 이런 걸 해보면 좋겠다.
 
