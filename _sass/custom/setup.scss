@@ -1,0 +1,78 @@
+// ════════════════════════════════════════════════════════════
+//  팔레트 — "Cold Steel"
+//
+//  just-the-docs 는 support/_variables.scss 를 !default 로 먼저 읽고,
+//  그 다음 이 파일(custom/setup.scss)을 읽는다.
+//  따라서 여기서 !default 없이 재정의하면 테마 기본 색을 전부 덮어쓴다.
+//
+//  기조: 따뜻한 회색(#5c5962 계열)과 보라 액센트를 전부 걷어내고
+//        푸른기가 도는 슬레이트 + 스틸 블루로 통일한다.
+// ════════════════════════════════════════════════════════════
+
+// ── 무채색: 전부 파란기가 섞인 슬레이트 ────────────────────
+$white: #ffffff;
+
+$grey-dk-000: #7d8ea6; // 흐린 보조 텍스트
+$grey-dk-100: #46586f; // 본문
+$grey-dk-200: #2f3f55; // 강조 본문
+$grey-dk-250: #1b2839; // 진한 면
+$grey-dk-300: #0d1826; // 제목 / 가장 진한 잉크
+
+$grey-lt-000: #f4f7fa; // 사이드바 · 코드 배경
+$grey-lt-100: #e2e9f1; // 기본 보더
+$grey-lt-200: #d8e1eb;
+$grey-lt-300: #c9d5e2;
+
+// ── 액센트: 링크·버튼에 쓰이는 자리(테마상 purple) ─────────
+// 보라 대신 차가운 스틸 블루를 넣는다.
+$purple-000: #0f6fd6;
+$purple-100: #0c5aaf;
+$purple-200: #094788;
+$purple-300: #073563;
+
+// ── 인포 블루 (note 콜아웃) ─────────────────────────────────
+$blue-000: #2b8ad4;
+$blue-100: #1f6fae;
+$blue-200: #175787;
+$blue-300: #103f63;
+
+// ── 성공/해결: 초록 대신 청록 (따뜻해지지 않게) ─────────────
+$green-000: #12a2a2;
+$green-100: #0d8585;
+$green-200: #0a6868;
+$green-300: #074c4c;
+
+// ── 경고: 채도를 낮춘 앰버 ──────────────────────────────────
+$yellow-000: #d9a53f;
+$yellow-100: #b98a2c;
+$yellow-200: #916b20;
+$yellow-300: #6b4e15;
+
+// ── 문제/실패: 푸른기 도는 적색 ─────────────────────────────
+$red-000: #e0525f;
+$red-100: #c93d4a;
+$red-200: #a32f3b;
+$red-300: #78222c;
+
+// ── 타이포그래피 ────────────────────────────────────────────
+// Pretendard 를 앞에 세우고, 없으면 OS 기본 산세리프로 떨어진다.
+// (폰트 로딩은 _includes/head_custom.html)
+// prettier-ignore
+$body-font-family: "Pretendard Variable", "Pretendard", -apple-system,
+  BlinkMacSystemFont, "Apple SD Gothic Neo", "Segoe UI", system-ui, roboto,
+  "Helvetica Neue", "Noto Sans KR", arial, sans-serif, "Segoe UI Emoji";
+
+// prettier-ignore
+$mono-font-family: "JetBrains Mono", "SFMono-Regular", "SF Mono", menlo,
+  consolas, "D2Coding", monospace;
+
+$body-line-height: 1.5;
+$content-line-height: 1.75; // 한글 본문은 넉넉하게
+$body-heading-line-height: 1.35;
+
+// ── 형태 ────────────────────────────────────────────────────
+$border-radius: 6px;
+$border-color: $grey-lt-100;
+
+$content-width: 54rem; // 기본 50rem 보다 살짝 넓게
+$nav-width: 17.5rem;

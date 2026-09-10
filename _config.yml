@@ -1,8 +1,82 @@
-title: Memory Repo
-description: description
-theme: just-the-docs
+title: consolekakao
+description: 소프트웨어와 하드웨어 사이 어딘가에서 만든 것들, 그리고 삽질 기록.
+lang: ko-KR
 
-url: https://just-the-docs.github.io
+url: https://consolekakao.github.io
+baseurl: ""
+
+theme: just-the-docs
+color_scheme: light
+
+# ── 네비게이션 ──────────────────────────────────────────────
+nav_sort: case_insensitive
+heading_anchors: true
+back_to_top: true
+back_to_top_text: "맨 위로"
 
 aux_links:
-  Template Repository: https://github.com/just-the-docs/just-the-docs-template
+  GitHub: https://github.com/consolekakao
+aux_links_new_tab: true
+
+nav_external_links:
+  - title: GitHub
+    url: https://github.com/consolekakao
+    hide_icon: false
+
+# ── 검색 ────────────────────────────────────────────────────
+search_enabled: true
+search:
+  heading_level: 3
+  previews: 3
+  preview_words_before: 5
+  preview_words_after: 10
+  tokenizer_separator: /[\s/]+/
+  rel_url: true
+  button: false
+  focus_shortcut_key: "k"
+
+# ── 콜아웃 ──────────────────────────────────────────────────
+# 사용법:  {: .problem }
+#          > **증상** ...
+callouts_level: quiet
+callouts:
+  note:
+    color: blue
+  spec:
+    color: grey-dk
+  tip:
+    color: green
+  problem:
+    color: red
+  solution:
+    color: green
+  warning:
+    color: yellow
+
+# ── 다이어그램 ──────────────────────────────────────────────
+# ```mermaid 코드 블록으로 순서도/시퀀스 다이어그램을 그릴 수 있다.
+mermaid:
+  version: "10.9.1"
+
+# ── 푸터 ────────────────────────────────────────────────────
+footer_content: '© 2026 consolekakao. 글과 이미지는 직접 작성·촬영한 것이다.'
+
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  syntax_highlighter_opts:
+    block:
+      line_numbers: false
+
+plugins:
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - LICENSE
+  - vendor/
+  - _private/
+  - .claude/

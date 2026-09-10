@@ -1,0 +1,504 @@
+// ════════════════════════════════════════════════════════════
+//  커스텀 스타일
+//  색 변수는 custom/setup.scss 에서 정의한다. 여기는 형태·간격·구성 요소.
+// ════════════════════════════════════════════════════════════
+
+// ── 기본 ────────────────────────────────────────────────────
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: -0.01em;
+}
+
+// 한글은 단어 단위로 줄바꿈해야 읽기 편하다.
+.main-content,
+.site-title,
+.nav-list .nav-list-item .nav-list-link,
+.breadcrumb-nav-list-item {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+// ── 사이드바 ────────────────────────────────────────────────
+
+.side-bar {
+  background-color: $grey-lt-000;
+  border-right: $border $grey-lt-100;
+}
+
+.site-header {
+  border-bottom: $border $grey-lt-100;
+}
+
+.site-title {
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: $grey-dk-300;
+
+  &:hover {
+    background-image: none;
+    color: $purple-000;
+  }
+}
+
+// 사이드바 아래 설명 한 줄
+.site-tagline {
+  padding: 0 $sp-4 $sp-4;
+  margin: -#{$sp-2} 0 0;
+  font-size: 0.6875rem;
+  line-height: 1.5;
+  color: $grey-dk-000;
+
+  @include mq(md) {
+    padding: 0 $sp-6 $sp-4;
+  }
+}
+
+// 대분류 라벨(소프트웨어 개발 / 하드웨어 개발 …)을 눈에 띄게
+.nav-list .nav-list-item .nav-list-link {
+  &.active {
+    font-weight: 600;
+    color: $grey-dk-300;
+  }
+}
+
+.nav-category {
+  color: $grey-dk-000;
+  letter-spacing: 0.08em;
+  border-bottom: $border $grey-lt-100;
+}
+
+// ── 검색 ────────────────────────────────────────────────────
+
+.search-input {
+  background-color: $white;
+}
+
+.search-input-wrap {
+  border-bottom: $border $grey-lt-100;
+}
+
+.search-result-title {
+  color: $grey-dk-200;
+}
+
+// ── 본문 타이포 ─────────────────────────────────────────────
+
+.main-content {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $grey-dk-300;
+    letter-spacing: -0.025em;
+  }
+
+  h1 {
+    margin-bottom: $sp-2;
+    font-weight: 700;
+  }
+
+  // h2 는 섹션 구분선 역할
+  h2 {
+    padding-bottom: $sp-2;
+    margin-top: $sp-8;
+    font-weight: 650;
+    border-bottom: $border $grey-lt-100;
+  }
+
+  h3 {
+    margin-top: $sp-6;
+    font-weight: 650;
+  }
+
+  h4 {
+    margin-top: $sp-5;
+    color: $grey-dk-200;
+  }
+
+  p {
+    margin-bottom: $sp-4;
+  }
+
+  // 문단 안의 강조는 잉크색으로. 굵기만으로 구분한다.
+  strong {
+    font-weight: 650;
+    color: $grey-dk-300;
+  }
+
+  a {
+    text-decoration: none;
+    border-bottom: 1px solid rgba($purple-000, 0.35);
+    transition: border-color 120ms ease, color 120ms ease;
+
+    &:hover {
+      background-image: none;
+      border-bottom-color: $purple-000;
+    }
+  }
+
+  // 목록 간격
+  li {
+    margin-bottom: $sp-1;
+  }
+
+  hr {
+    height: 1px;
+    background-color: $grey-lt-100;
+    border: 0;
+  }
+}
+
+// 본문 첫 문단은 리드처럼 조금 크게
+.main-content > h1:first-of-type + p {
+  font-size: 1.0625rem;
+  color: $grey-dk-200;
+}
+
+// ── 이미지 + 캡션 ───────────────────────────────────────────
+//
+//  ![설명](../assets/…/foo-1.png)
+//  *캡션 한 줄*
+//
+//  위처럼 이미지 바로 다음 줄에 이탤릭을 쓰면 캡션으로 렌더링된다.
+
+.main-content {
+  img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: $sp-5 auto $sp-2;
+    background-color: $white;
+    border: $border $grey-lt-100;
+    border-radius: $border-radius;
+    box-shadow: 0 1px 2px rgba(13, 24, 38, 0.04),
+      0 8px 24px rgba(13, 24, 38, 0.05);
+  }
+
+  img + em,
+  img + br + em {
+    display: block;
+    margin-bottom: $sp-6;
+    font-size: 0.8125rem;
+    font-style: normal;
+    color: $grey-dk-000;
+    text-align: center;
+  }
+}
+
+// ── 코드 ────────────────────────────────────────────────────
+
+.main-content {
+  // 인라인 코드
+  code {
+    padding: 0.14em 0.36em;
+    font-size: 0.8125rem;
+    color: $grey-dk-200;
+    background-color: $grey-lt-000;
+    border: $border $grey-lt-100;
+    border-radius: 4px;
+  }
+
+  pre.highlight,
+  figure.highlight {
+    padding: $sp-4;
+    background-color: #f7f9fc;
+    border: $border $grey-lt-100;
+    border-radius: $border-radius;
+
+    code {
+      padding: 0;
+      background-color: transparent;
+      border: 0;
+    }
+  }
+
+  div.highlighter-rouge,
+  figure.highlight {
+    margin-top: $sp-4;
+    margin-bottom: $sp-5;
+    background-color: #f7f9fc;
+    border-radius: $border-radius;
+    box-shadow: none;
+  }
+}
+
+// ── 표 ──────────────────────────────────────────────────────
+//
+//  수치 비교표가 이 블로그의 핵심 도구라 눈에 잘 들어오게 한다.
+
+.main-content {
+  table {
+    display: table;
+    width: 100%;
+    margin: $sp-5 0;
+    font-size: 0.875rem;
+    border: $border $grey-lt-100;
+    border-radius: $border-radius;
+    border-collapse: separate;
+    border-spacing: 0;
+    box-shadow: none;
+  }
+
+  thead th {
+    font-size: 0.75rem;
+    font-weight: 650;
+    color: $grey-dk-100;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    background-color: $grey-lt-000;
+    border-bottom: $border $grey-lt-100;
+  }
+
+  th,
+  td {
+    padding: $sp-2 $sp-3;
+    border-bottom: $border $grey-lt-100;
+  }
+
+  tbody tr:last-child td {
+    border-bottom: 0;
+  }
+
+  // 숫자 열은 탭 정렬(tnum)로 자릿수를 맞춘다.
+  td[align="right"],
+  th[align="right"] {
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+.table-wrapper {
+  box-shadow: none;
+}
+
+// ── 인용 / 콜아웃 ───────────────────────────────────────────
+
+.main-content blockquote {
+  padding-left: $sp-4;
+  margin-left: 0;
+  color: $grey-dk-100;
+  border-left: 3px solid $grey-lt-200;
+}
+
+// 콜아웃(.note / .problem / .solution …)은 테마가 그림자를 크게 주는데
+// 차분한 톤에 안 맞아 줄인다.
+.main-content {
+  p.note,
+  p.tip,
+  p.spec,
+  p.problem,
+  p.solution,
+  p.warning,
+  blockquote.note,
+  blockquote.tip,
+  blockquote.spec,
+  blockquote.problem,
+  blockquote.solution,
+  blockquote.warning {
+    padding: $sp-3 $sp-4;
+    margin: $sp-4 0;
+    box-shadow: none;
+  }
+}
+
+// ── 목차(details/summary) ───────────────────────────────────
+
+.main-content details {
+  padding: $sp-3 $sp-4;
+  margin: $sp-5 0;
+  background-color: $grey-lt-000;
+  border: $border $grey-lt-100;
+  border-radius: $border-radius;
+
+  > summary {
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: $grey-dk-200;
+    cursor: pointer;
+    list-style: none;
+
+    &::marker,
+    &::-webkit-details-marker {
+      display: none;
+    }
+
+    &::before {
+      display: inline-block;
+      margin-right: $sp-2;
+      content: "▸";
+      color: $grey-dk-000;
+    }
+  }
+
+  &[open] > summary::before {
+    content: "▾";
+  }
+
+  ul {
+    margin-bottom: 0;
+  }
+}
+
+// ── 상단 breadcrumb / 이전·다음 ─────────────────────────────
+
+.breadcrumb-nav-list-item {
+  font-size: 0.75rem;
+  color: $grey-dk-000;
+}
+
+// ── 홈 화면 ─────────────────────────────────────────────────
+
+.home-hero {
+  padding: $sp-4 0 $sp-7;
+  margin-bottom: $sp-6;
+  border-bottom: $border $grey-lt-100;
+
+  &__eyebrow {
+    margin: 0 0 $sp-3;
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: $purple-000;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+
+  &__title {
+    margin: 0 0 $sp-4;
+    font-size: 1.875rem;
+    font-weight: 700;
+    line-height: 1.35;
+    letter-spacing: -0.035em;
+    color: $grey-dk-300;
+
+    @include mq(md) {
+      font-size: 2.25rem;
+    }
+  }
+
+  &__lede {
+    max-width: 34rem;
+    margin: 0;
+    font-size: 1rem;
+    line-height: 1.75;
+    color: $grey-dk-100;
+  }
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: $sp-4;
+  margin: $sp-5 0 $sp-7;
+
+  @include mq(sm) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.card {
+  display: block;
+  padding: $sp-4 $sp-5 $sp-5;
+  color: inherit;
+  text-decoration: none;
+  background-color: $white;
+  border: $border $grey-lt-100;
+  border-radius: $border-radius;
+  transition: border-color 140ms ease, box-shadow 140ms ease,
+    transform 140ms ease;
+
+  &:hover {
+    background-image: none;
+    border-color: rgba($purple-000, 0.5);
+    box-shadow: 0 1px 2px rgba(13, 24, 38, 0.04),
+      0 10px 28px rgba(13, 24, 38, 0.07);
+    transform: translateY(-2px);
+  }
+
+  &__index {
+    display: block;
+    margin-bottom: $sp-2;
+    font-family: $mono-font-family;
+    font-size: 0.6875rem;
+    color: $purple-000;
+    letter-spacing: 0.1em;
+  }
+
+  &__title {
+    display: block;
+    margin-bottom: $sp-2;
+    font-size: 1.0625rem;
+    font-weight: 650;
+    letter-spacing: -0.02em;
+    color: $grey-dk-300;
+  }
+
+  &__desc {
+    display: block;
+    font-size: 0.8125rem;
+    line-height: 1.7;
+    color: $grey-dk-100;
+  }
+
+  &__tags {
+    display: block;
+    margin-top: $sp-3;
+    font-family: $mono-font-family;
+    font-size: 0.6875rem;
+    color: $grey-dk-000;
+  }
+}
+
+// 홈에서 카드 링크에는 본문 링크 밑줄을 넣지 않는다.
+.main-content .card,
+.main-content .card:hover {
+  border-bottom: $border $grey-lt-100;
+}
+
+.main-content .card:hover {
+  border-color: rgba($purple-000, 0.5);
+}
+
+// 최근 글 목록
+.main-content .recent-list {
+  padding: 0;
+  margin: 0 0 $sp-6;
+  list-style: none;
+
+  > li::before {
+    content: none;
+  }
+
+  li {
+    display: flex;
+    gap: $sp-3;
+    align-items: baseline;
+    padding: $sp-2 0;
+    border-bottom: $border $grey-lt-100;
+  }
+
+  .recent-list__cat {
+    flex: 0 0 auto;
+    min-width: 6.5rem;
+    font-family: $mono-font-family;
+    font-size: 0.6875rem;
+    color: $grey-dk-000;
+  }
+}
+
+// ── 푸터 ────────────────────────────────────────────────────
+
+.site-footer {
+  font-size: 0.6875rem;
+  color: $grey-dk-000;
+}
+
+// ── 인쇄 ────────────────────────────────────────────────────
+
+@media print {
+  .main-content img {
+    box-shadow: none;
+  }
+}
