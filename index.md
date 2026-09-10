@@ -20,13 +20,13 @@ description: 소프트웨어와 하드웨어 사이 어딘가에서 만든 것�
     <span class="card__index">01</span>
     <span class="card__title">소프트웨어 개발</span>
     <span class="card__desc">서버와 앱, 그리고 그 아래를 받치는 인프라. 일단 돌아가게 만든 다음, 비용과 부하를 줄여간 이야기들.</span>
-    <span class="card__tags">Node.js · React Native · AWS Lambda · S3</span>
+    <span class="card__tags">Node.js · React Native · AWS Lambda · OpenDRIVE</span>
   </a>
   <a class="card" href="{{ '/docs/hardware/hardware.html' | relative_url }}">
     <span class="card__index">02</span>
     <span class="card__title">하드웨어 개발</span>
-    <span class="card__desc">ROS2 자율주행 로봇과 라이다, 카메라 센서. 틀려도 에러 로그 하나 안 남는 동네다.</span>
-    <span class="card__tags">ROS2 · Lidar · Gazebo · OpenCV</span>
+    <span class="card__desc">ROS2 자율주행 로봇, 라이다와 카메라 센서, 3D 설계까지. 틀려도 에러 로그 하나 안 남는 동네다.</span>
+    <span class="card__tags">ROS2 · Lidar · Blender · OpenCV</span>
   </a>
   <a class="card" href="{{ '/docs/cs/cs.html' | relative_url }}">
     <span class="card__index">03</span>
@@ -46,20 +46,24 @@ description: 소프트웨어와 하드웨어 사이 어딘가에서 만든 것�
 
 <ul class="recent-list" markdown="0">
   <li>
-    <span class="recent-list__cat">하드웨어</span>
-    <a href="{{ '/docs/hardware/ros-5-multi-lidar.html' | relative_url }}">다중 라이다 시각화 — 센서 두 대를 하나의 좌표계로</a>
-  </li>
-  <li>
-    <span class="recent-list__cat">하드웨어</span>
-    <a href="{{ '/docs/hardware/ros-4-line-tracing.html' | relative_url }}">카메라 센서를 이용한 라인 트레이싱</a>
-  </li>
-  <li>
-    <span class="recent-list__cat">하드웨어</span>
-    <a href="{{ '/docs/hardware/ros-3-lidar.html' | relative_url }}">Lidar를 이용한 측위</a>
+    <span class="recent-list__cat">소프트웨어</span>
+    <a href="{{ '/docs/software/lingbot-map-3d.html' | relative_url }}">영상 한 편으로 3D 맵 만들기 — 24GB VRAM과 싸우기</a>
   </li>
   <li>
     <span class="recent-list__cat">소프트웨어</span>
-    <a href="{{ '/docs/software/home-server-monitoring.html' | relative_url }}">남는 PC를 홈서버로 — RN 모니터링 앱 만들기</a>
+    <a href="{{ '/docs/software/opendrive-lane-routing.html' | relative_url }}">OpenDRIVE에서 "다음 갈 수 있는 길" 찾기</a>
+  </li>
+  <li>
+    <span class="recent-list__cat">하드웨어</span>
+    <a href="{{ '/docs/hardware/camera-jig-blender.html' | relative_url }}">Blender로 4방향 카메라 지그 설계하기</a>
+  </li>
+  <li>
+    <span class="recent-list__cat">하드웨어</span>
+    <a href="{{ '/docs/hardware/homeserver-case-blender.html' | relative_url }}">홈서버 케이스를 직접 짜보기</a>
+  </li>
+  <li>
+    <span class="recent-list__cat">하드웨어</span>
+    <a href="{{ '/docs/hardware/ros-5-multi-lidar.html' | relative_url }}">다중 라이다 시각화 — 센서 두 대를 하나의 좌표계로</a>
   </li>
   <li>
     <span class="recent-list__cat">회고</span>

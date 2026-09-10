@@ -2,7 +2,7 @@
 title: 남는 PC를 홈서버로 - RN 모니터링 앱 만들기
 layout: default
 parent: 소프트웨어 개발
-nav_order: 1
+nav_order: 3
 summary: 남는 PC를 침대 밑에 넣고 발열을 감시하기
 description: AWS 비용이 아까워 집에 있는 PC를 NAS 겸 API 서버로 돌리고, 발열을 감시할 앱을 React Native로 만든 기록.
 ---

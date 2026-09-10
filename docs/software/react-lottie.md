@@ -2,7 +2,7 @@
 title: React에서 Lottie 사용하기
 layout: default
 parent: 소프트웨어 개발
-nav_order: 4
+nav_order: 6
 summary: 디자이너 없이 애니메이션 붙이기
 description: 디자이너 없이 로딩 애니메이션이 필요할 때. After Effects 애니메이션을 JSON으로 받아 쓰는 방법.
 ---
